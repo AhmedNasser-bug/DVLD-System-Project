@@ -11,6 +11,10 @@ namespace DVLD_DataAccessLayer
 {
     public class UsersAccess
     {
+        /// <summary>
+        /// Gets a user with the given UserID and fills the given ref parameters with the found user data.
+        /// </summary>
+        /// <returns>True if the user with the given userID is found, false otherwise.</returns>
         public static bool GetUserByID(int UserID, ref int PersonID, ref string UserName, ref string Password, ref bool IsActive)
         { 
             string query = "select * from Users where UserID = @UserID";
@@ -32,6 +36,11 @@ namespace DVLD_DataAccessLayer
             
 
         }
+
+        /// <summary>
+        /// Gets a user with the given UserName and fills the given ref parameters with the found user data.
+        /// </summary>
+        /// <returns>True if the user with the given username is found, false otherwise.</returns>
         public static bool GetUserByUserName(string UserName,ref int UserID, ref int PersonID,  ref string Password, ref bool IsActive)
         {
             string query = "select * from Users where UserName = @Username";
@@ -50,6 +59,11 @@ namespace DVLD_DataAccessLayer
             return false;
 
         }
+
+        /// <summary>
+        /// Adds a new user to the database.
+        /// </summary>
+        /// <returns>The ID of the newly added user, -1 if the user could not be added.</returns>
         public static int AddNewUser( int PersonID, string UserName, string Password, bool IsActive)
         {
             string query = "Insert into Users (PersonID, Username, Password, IsActive ) Values ( @PersonID, @UserName, @Password, @IsActive ) ; select Scope_Identity();";
@@ -59,6 +73,11 @@ namespace DVLD_DataAccessLayer
             return UserID;
 
         }
+
+        /// <summary>
+        /// Updates the user with the given user ID.
+        /// </summary>
+        /// <returns>True if the user is successfully updated, false otherwise.</returns>
         public static bool UpdateUser(int UserID, int PersonID, string UserName, string Password, bool IsActive)
         {
             string query = "Update Users" +
@@ -69,6 +88,11 @@ namespace DVLD_DataAccessLayer
             return result;
 
         }
+
+        /// <summary>
+        /// Deletes the user with the given user ID.
+        /// </summary>
+        /// <returns>True if the user is successfully deleted, false otherwise.</returns>
         public static bool DeleteUser(int UserID)
         {
             string query = "delete from Users where UserID = @UserID";
@@ -77,6 +101,11 @@ namespace DVLD_DataAccessLayer
 
             return result;
         }
+
+        /// <summary>
+        /// Checks if a User with the given UserID exists.
+        /// </summary>
+        /// <returns>True if the user exists, false otherwise.</returns>
         public static bool IsUserExist(int UserID)
         {
             string query = "select 1 from Users where UserID = @UserID";
@@ -85,6 +114,12 @@ namespace DVLD_DataAccessLayer
 
             return result;
         }
+
+        /// <summary>
+        /// Checks if a User with the given UserName exists.
+        /// </summary>
+        /// <param name="UserName"></param>
+        /// <returns>True if the user exists, false otherwise.</returns>
         public static bool IsUserExist(string UserName)
         {
             string query = "select 1 from Users where UserName = @UserName";
@@ -93,6 +128,11 @@ namespace DVLD_DataAccessLayer
 
             return result;
         }
+
+        /// <summary>
+        /// Checks if the given person is already a user.
+        /// </summary>
+        /// <returns>True if the given person is a user, false otherwise.</returns>
         public static bool PersonIsAlreadyUser(int PersonID)
         {
             string query = "SELECT 1 FROM Users WHERE PersonID = @PID";
@@ -101,6 +141,11 @@ namespace DVLD_DataAccessLayer
 
             return isFound;
         }
+
+        /// <summary>
+        /// Gets a table of all users including active and inactive users.
+        /// </summary>
+        /// <returns>A DataTable object of all users present in the system.</returns>
         public static DataTable GetUsers()
         {
             return ConnectionUtils.GetTable("SELECT UserID, FullName = FirstName + ' ' + SecondName + ' ' + ThirdName + ' ' + LastName,UserName, IsActive  \r\nFROM Users \r\nINNER JOIN People\r\nON Users.PersonID = People.PersonID");

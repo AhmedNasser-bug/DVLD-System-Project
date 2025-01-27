@@ -20,8 +20,17 @@ namespace DVLD_DataAccessLayer
             SmallAndMediumBus =6,
             TruckAndHeavyVehicle = 7
         }
-        
 
+        /// <summary>
+        /// Add a new License Class to the database and outputs the data of the found license class in the parameters.
+        /// </summary>
+        /// <param name="LicenseClass_ID"></param>
+        /// <param name="ClassName"></param>
+        /// <param name="ClassDescription"></param>
+        /// <param name="MinimumAllowedAge"></param>
+        /// <param name="ClassValidityLength"></param>
+        /// <param name="ClassFees"></param>
+        /// <returns>True if the license class is found, false otherwise.</returns>
         public static bool GetLicenseClassWithID(int LicenseClass_ID, ref string ClassName, ref string ClassDescription, ref int MinimumAllowedAge, ref int ClassValidityLength, ref decimal ClassFees)
         {
             string query = "SELECT * FROM LicenseClasses " +
@@ -46,7 +55,14 @@ namespace DVLD_DataAccessLayer
 
         }
 
-
+        /// <summary>
+        /// Edits License Class to the database.
+        /// </summary>
+        /// <param name="LicenseClass_ID"></param>
+        /// <param name="NewMinAllowedAge"></param>
+        /// <param name="NewValidityLength"></param>
+        /// <param name="NewFees"></param>
+        /// <returns>True if the license class is successfully edited, false otherwise.</returns>
         public static bool EditLicenseClass(int LicenseClass_ID, int NewMinAllowedAge, int NewValidityLength, decimal NewFees)
         {
             string query = "UPDATE LicenseClass " +
@@ -56,9 +72,12 @@ namespace DVLD_DataAccessLayer
             bool result = ConnectionUtils.UpdateTableRow(query, NewMinAllowedAge, NewValidityLength, NewFees, LicenseClass_ID);
 
             return result;
-        } 
+        }
 
-
+        /// <summary>
+        /// Gets all License Classes from the database.
+        /// </summary>
+        /// <returns>DataTable containing all License Classes.</returns>
         public static DataTable GetAllLicenseClasses()
         {
             return ConnectionUtils.GetTable("SELECT * FROM LicenseClasses");

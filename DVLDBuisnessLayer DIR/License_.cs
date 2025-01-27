@@ -211,7 +211,7 @@ namespace DVLDBuisnessLayer
 
         public string strIssueReason()
         {
-            return IssueReasons[IssueReason - 1];
+            return IssueReasons[IssueReason];
         }
 
         /// <summary>

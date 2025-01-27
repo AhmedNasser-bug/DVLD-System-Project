@@ -34,7 +34,7 @@ namespace DVLD_System.Controls
             lblExpiryDate.Text = license.ExpirationDate.ToShortDateString();
             lblDriverID.Text = license.DriverID.ToString();
             lblDateOfBirth.Text = license.application.AssociatedPerson.DateOfBirth.ToShortDateString();
-            pbPersonalPhoto.Image = Image.FromFile(license.driver.AssosiatedPerson.ImagePath);
+            if(license.driver.AssosiatedPerson.ImagePath != "") pbPersonalPhoto.Image = Image.FromFile(license.driver.AssosiatedPerson.ImagePath);
         }
     }
 }

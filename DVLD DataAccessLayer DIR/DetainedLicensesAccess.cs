@@ -10,6 +10,19 @@ namespace DVLD_DataAccessLayer
 {
     public static class DetainedLicensesAccess
     {
+        /// <summary>
+        /// Returns the detain data for the given detain ID inside the given ref parameters.
+        /// </summary>
+        /// <param name="DetainID"></param>
+        /// <param name="LicenseID"></param>
+        /// <param name="DetainDate"></param>
+        /// <param name="FineFees"></param>
+        /// <param name="CreatedByUserID"></param>
+        /// <param name="isReleased"></param>
+        /// <param name="ReleaseDate"></param>
+        /// <param name="ReleasedByUserID"></param>
+        /// <param name="ReleaseApplicationID"></param>
+        /// <returns>True if the DetainedLicense is found, false otherwise.</returns>
         public static bool FindWithID(int DetainID, ref int LicenseID, ref DateTime DetainDate, ref decimal FineFees, ref int CreatedByUserID, ref bool isReleased,
             ref DateTime ReleaseDate, ref int ReleasedByUserID, ref int ReleaseApplicationID)
         {
@@ -37,6 +50,19 @@ namespace DVLD_DataAccessLayer
             return Found;
         }
 
+        /// <summary>
+        /// Returns the detain data for the given license ID inside the given ref parameters.
+        /// </summary>
+        /// <param name="LicenseID"></param>
+        /// <param name="DetainID"></param>
+        /// <param name="DetainDate"></param>
+        /// <param name="FineFees"></param>
+        /// <param name="CreatedByUserID"></param>
+        /// <param name="isReleased"></param>
+        /// <param name="ReleaseDate"></param>
+        /// <param name="ReleasedByUserID"></param>
+        /// <param name="ReleaseApplicationID"></param>
+        /// <returns>True if the given license is detained, false otherwise.</returns>
         public static bool FindWithLicenseID(int LicenseID, ref int DetainID, ref DateTime DetainDate, ref decimal FineFees, ref int CreatedByUserID, ref bool isReleased,
             ref DateTime ReleaseDate, ref int ReleasedByUserID, ref int ReleaseApplicationID)
         {
@@ -57,6 +83,18 @@ namespace DVLD_DataAccessLayer
             return Found;
         }
 
+        /// <summary>
+        /// Adds a new detained license to the database.
+        /// </summary>
+        /// <param name="LicenseID"></param>
+        /// <param name="DetainDate"></param>
+        /// <param name="FineFees"></param>
+        /// <param name="CreatedByUserID"></param>
+        /// <param name="isReleased"></param>
+        /// <param name="ReleaseDate"></param>
+        /// <param name="ReleasedByUserID"></param>
+        /// <param name="ReleaseApplicationID"></param>
+        /// <returns>The DetainID of the newly detained license, -1 in case of failing to add it to the table</returns>
         public static int AddDetainedLicense(int LicenseID, DateTime DetainDate, decimal FineFees, int CreatedByUserID, bool isReleased,
             DateTime ReleaseDate, int ReleasedByUserID, int ReleaseApplicationID)
         {
@@ -69,7 +107,15 @@ namespace DVLD_DataAccessLayer
             return DetainedLicenseID;
         }
 
-        public static bool ReleaseDetainedLicense(int DetainedLicenseID, DateTime ReleaseDate, int ReleasedByUserID, int ReleasedApplicationID)
+        /// <summary>
+        /// Releases the detained license with the given DetainID.
+        /// </summary>
+        /// <param name="DetainedLicenseID"></param>
+        /// <param name="ReleaseDate"></param>
+        /// <param name="ReleasedByUserID"></param>
+        /// <param name="ReleasedApplicationID"></param>
+        /// <returns>True if the release is successful, false otherwise.</returns>
+        public static bool ReleaseDetainedLicense(int DetainedLicenseID, DateTime ReleaseDate, int ReleasedByUserID, int ReleasedApplicationID) // TODO: Make SP_ReleaseDetainedLicense for faster querying
         {
             string query = "UPDATE Licenses " +
                            "SET IsActive = 1" +
@@ -88,6 +134,10 @@ namespace DVLD_DataAccessLayer
             return result;
         }
 
+        /// <summary>
+        /// Fetches a table containing all the detained licenses in the database.
+        /// </summary>
+        /// <returns>A DataTable object containing all the detained licenses data.</returns>
         public static DataTable GetTable()
         {
             string query = "SELECT * FROM DetainedLicenses";

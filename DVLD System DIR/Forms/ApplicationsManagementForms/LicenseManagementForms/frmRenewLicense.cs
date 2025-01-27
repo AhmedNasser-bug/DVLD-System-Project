@@ -42,7 +42,7 @@ namespace DVLD_System.Forms.ApplicationsManagementForms
         {
 
 
-            // Renew license if it needs so else raise error
+            // Renew license if it needs so, else raise error
             License_ selectedLicense = SelectedLicense();
 
             if(selectedLicense != null && selectedLicense.NeedRenew())
@@ -73,7 +73,5 @@ namespace DVLD_System.Forms.ApplicationsManagementForms
             lblTotalFees.Text = $"{appType.AppTypeFee + license.licenseClass.LicenseClassFee}";
         }
 
-        // TODO :
-        // ADD License history link label, License Details link label
     }
 }

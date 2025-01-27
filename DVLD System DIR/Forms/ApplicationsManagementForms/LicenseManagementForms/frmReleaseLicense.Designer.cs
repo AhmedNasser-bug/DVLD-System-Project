@@ -36,7 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ctrlFindLicense = new DVLD_System.Controls.ctrlFindLicense();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblAppFees = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ctrlFindLicense = new DVLD_System.Controls.ctrlFindLicense();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -131,14 +131,6 @@
             this.label2.Size = new System.Drawing.Size(100, 25);
             this.label2.TabIndex = 17;
             this.label2.Text = "Detain ID:";
-            // 
-            // ctrlFindLicense
-            // 
-            this.ctrlFindLicense.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ctrlFindLicense.Location = new System.Drawing.Point(12, 74);
-            this.ctrlFindLicense.Name = "ctrlFindLicense";
-            this.ctrlFindLicense.Size = new System.Drawing.Size(1029, 327);
-            this.ctrlFindLicense.TabIndex = 16;
             // 
             // label1
             // 
@@ -272,6 +264,14 @@
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
+            // ctrlFindLicense
+            // 
+            this.ctrlFindLicense.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ctrlFindLicense.Location = new System.Drawing.Point(12, 74);
+            this.ctrlFindLicense.Name = "ctrlFindLicense";
+            this.ctrlFindLicense.Size = new System.Drawing.Size(1029, 327);
+            this.ctrlFindLicense.TabIndex = 16;
+            // 
             // frmReleaseLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,7 +305,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private Controls.ctrlFindLicense ctrlFindLicense;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblAppFees;
@@ -315,5 +314,6 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Controls.ctrlFindLicense ctrlFindLicense;
     }
 }

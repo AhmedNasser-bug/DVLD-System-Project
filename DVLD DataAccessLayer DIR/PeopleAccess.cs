@@ -10,6 +10,23 @@ namespace DVLD_DataAccessLayer
 {
     public static class PeopleAccess
     {
+        /// <summary>
+        /// Gets The Person With the given National number and fills the given variables with the person's data.
+        /// </summary>
+        /// <param name="NationalNo"></param>
+        /// <param name="PersonID"></param>
+        /// <param name="FirstName"></param>
+        /// <param name="SecondName"></param>
+        /// <param name="ThirdName"></param>
+        /// <param name="LastName"></param>
+        /// <param name="DateOfBirth"></param>
+        /// <param name="Gender"></param>
+        /// <param name="Address"></param>
+        /// <param name="Phone"></param>
+        /// <param name="Email"></param>
+        /// <param name="CountryID"></param>
+        /// <param name="ImagePath"></param>
+        /// <returns>True if the person is found, false otherwise.</returns>
         public static bool GetPersonByNationalNo(string NationalNo, ref int PersonID, ref string FirstName, ref string SecondName, ref string ThirdName, ref string LastName
                                         ,ref DateTime DateOfBirth, ref bool Gender, ref string Address,
                                         ref string Phone, ref string Email, ref int CountryID, ref string ImagePath)
@@ -60,6 +77,23 @@ namespace DVLD_DataAccessLayer
 
         }
 
+        /// <summary>
+        /// Gets The Person With the given ID and fills the given variables with the person's data.
+        /// </summary>
+        /// <param name="PersonID"></param>
+        /// <param name="NationalNo"></param>
+        /// <param name="FirstName"></param>
+        /// <param name="SecondName"></param>
+        /// <param name="ThirdName"></param>
+        /// <param name="LastName"></param>
+        /// <param name="DateOfBirth"></param>
+        /// <param name="Gender"></param>
+        /// <param name="Address"></param>
+        /// <param name="Phone"></param>
+        /// <param name="Email"></param>
+        /// <param name="CountryID"></param>
+        /// <param name="ImagePath"></param>
+        /// <returns>True if the person is found, false otherwise.</returns>
         public static bool GetPersonByID(int PersonID, ref string NationalNo, ref string FirstName, ref string SecondName, ref string ThirdName, ref string LastName
                                         , ref DateTime DateOfBirth, ref bool Gender, ref string Address,
                                         ref string Phone, ref string Email, ref int CountryID, ref string ImagePath)
@@ -106,6 +140,22 @@ namespace DVLD_DataAccessLayer
 
         }
 
+        /// <summary>
+        /// Adds a new person to the database.
+        /// </summary>
+        /// <param name="NationalNo"></param>
+        /// <param name="FirstName"></param>
+        /// <param name="SecondName"></param>
+        /// <param name="ThirdName"></param>
+        /// <param name="LastName"></param>
+        /// <param name="DateOfBirth"></param>
+        /// <param name="Gender"></param>
+        /// <param name="Address"></param>
+        /// <param name="Phone"></param>
+        /// <param name="Email"></param>
+        /// <param name="CountryID"></param>
+        /// <param name="ImagePath"></param>
+        /// <returns>The ID of the newly added person.</returns>
         public static int AddNewPerson(string NationalNo, string FirstName, string SecondName, string ThirdName, string LastName,
                                          DateTime DateOfBirth, bool Gender, string Address,
                                         string Phone, string Email, int CountryID, string ImagePath)
@@ -130,7 +180,23 @@ namespace DVLD_DataAccessLayer
             return Convert.ToInt32(result);
         }
 
-        
+        /// <summary>
+        /// Updates the person with the given ID.
+        /// </summary>
+        /// <param name="PersonID"></param>
+        /// <param name="FirstName"></param>
+        /// <param name="SecondName"></param>
+        /// <param name="ThirdName"></param>
+        /// <param name="LastName"></param>
+        /// <param name="NationalNo"></param>
+        /// <param name="DateOfBirth"></param>
+        /// <param name="Gender"></param>
+        /// <param name="Address"></param>
+        /// <param name="Phone"></param>
+        /// <param name="Email"></param>
+        /// <param name="CountryID"></param>
+        /// <param name="ImagePath"></param>
+        /// <returns>True if the update was successful, false otherwise.</returns>
         public static bool UpdatePerson(int PersonID, string FirstName, string SecondName, string ThirdName, string LastName,
                                         string NationalNo, DateTime DateOfBirth, bool Gender, string Address, string Phone, 
                                         string Email, int CountryID, string ImagePath) 
@@ -152,6 +218,11 @@ namespace DVLD_DataAccessLayer
             return RowsAffected > 0;
         }
 
+        /// <summary>
+        /// Deletes the person with the given ID.
+        /// </summary>
+        /// <param name="PersonID"></param>
+        /// <returns>The number of rows affected by the deletion.</returns>
         public static int DeletePerson(int PersonID)
         {
             SqlConnection connection = ConnectionUtils.InitiateConnection();
@@ -167,6 +238,11 @@ namespace DVLD_DataAccessLayer
             return RowsAffected;
         }
 
+        /// <summary>
+        /// Checks if a person with the given ID exists.
+        /// </summary>
+        /// <param name="PersonID"></param>
+        /// <returns>True if the person exists, false otherwise.</returns>
         public static bool IsPersonExist(int PersonID)      
         {
             SqlConnection connection = ConnectionUtils.InitiateConnection();
@@ -183,6 +259,11 @@ namespace DVLD_DataAccessLayer
 
         }
 
+        /// <summary>
+        /// Checks if a person with the given National number exists.
+        /// </summary>
+        /// <param name="NationalNo"></param>
+        /// <returns>True if the person exists, false otherwise.</returns>
         public static bool IsPersonExist(string NationalNo)
         {
             SqlConnection connection = ConnectionUtils.InitiateConnection();
@@ -199,6 +280,11 @@ namespace DVLD_DataAccessLayer
 
         }
 
+        /// <summary>
+        /// Checks if a person with the given ID is a user.
+        /// </summary>
+        /// <param name="PersonID"></param>
+        /// <returns>True if the person is a user, false otherwise.</returns>
         public static bool IsUser(int PersonID)
         {
             string query = "select 1 from Users where PersonID = @PersonID";
@@ -208,6 +294,10 @@ namespace DVLD_DataAccessLayer
             return result;
         }
 
+        /// <summary>
+        /// Gets all the people in the database.
+        /// </summary>
+        /// <returns>A DataTable containing all the people in the database.</returns>
         public static DataTable GetPeopleTable() 
         {
             DataTable peopleTable = ConnectionUtils.GetTable("select * from People");
@@ -216,6 +306,10 @@ namespace DVLD_DataAccessLayer
                 
         }
 
+        /// <summary>
+        /// Gets all the people in the database who are not users.
+        /// </summary>
+        /// <returns>A DataTable containing all the people in the database who are not users.</returns>
         public static DataTable GetAllNonUsers()
         {
             DataTable NonUsers = ConnectionUtils.GetTable("select * from People where PersonID not in (select PersonID from Users)");

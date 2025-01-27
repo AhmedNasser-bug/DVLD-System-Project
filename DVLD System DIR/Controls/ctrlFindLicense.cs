@@ -29,6 +29,11 @@ namespace DVLD_System.Controls
             if (cbLicenseIDs.Items.Count > 0)
             {
                 cbLicenseIDs.SelectedIndex = 0;
+                btnFindLicenseID.Visible = true;
+                btnFindLicenseID.Enabled = true;
+            }
+            else
+            {
                 btnFindLicenseID.Visible = false;
                 btnFindLicenseID.Enabled = false;
             }

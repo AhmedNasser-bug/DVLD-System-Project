@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnFindLicenseID = new System.Windows.Forms.Button();
-            this.ctrlShowLicense = new DVLD_System.Controls.ctrlShowLicense();
             this.cbLicenseIDs = new System.Windows.Forms.ComboBox();
+            this.ctrlShowLicense = new DVLD_System.Controls.ctrlShowLicense();
             this.SuspendLayout();
             // 
             // label1
@@ -48,19 +48,13 @@
             // 
             this.btnFindLicenseID.BackgroundImage = global::DVLD_System.Properties.Resources.check_mark;
             this.btnFindLicenseID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFindLicenseID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindLicenseID.Location = new System.Drawing.Point(263, 22);
             this.btnFindLicenseID.Name = "btnFindLicenseID";
             this.btnFindLicenseID.Size = new System.Drawing.Size(29, 23);
             this.btnFindLicenseID.TabIndex = 17;
             this.btnFindLicenseID.UseVisualStyleBackColor = true;
             this.btnFindLicenseID.Click += new System.EventHandler(this.btnFindLicenseID_Click);
-            // 
-            // ctrlShowLicense
-            // 
-            this.ctrlShowLicense.Location = new System.Drawing.Point(9, 69);
-            this.ctrlShowLicense.Name = "ctrlShowLicense";
-            this.ctrlShowLicense.Size = new System.Drawing.Size(1015, 257);
-            this.ctrlShowLicense.TabIndex = 18;
             // 
             // cbLicenseIDs
             // 
@@ -70,6 +64,13 @@
             this.cbLicenseIDs.Size = new System.Drawing.Size(121, 21);
             this.cbLicenseIDs.TabIndex = 19;
             this.cbLicenseIDs.SelectedIndexChanged += new System.EventHandler(this.cbLicenseIDs_SelectedIndexChanged);
+            // 
+            // ctrlShowLicense
+            // 
+            this.ctrlShowLicense.Location = new System.Drawing.Point(9, 69);
+            this.ctrlShowLicense.Name = "ctrlShowLicense";
+            this.ctrlShowLicense.Size = new System.Drawing.Size(1015, 257);
+            this.ctrlShowLicense.TabIndex = 18;
             // 
             // ctrlFindLicense
             // 

@@ -17,7 +17,18 @@ namespace DVLD_DataAccessLayer
             Completed = 3
         }
 
-
+        /// <summary>
+        /// Returns the application data with the given id within the given ref parameters.
+        /// </summary>
+        /// <param name="App_ID"></param>
+        /// <param name="ApplicantPerson_ID"></param>
+        /// <param name="ApplicationDate"></param>
+        /// <param name="ApplicationType_ID"></param>
+        /// <param name="ApplicationStatus"></param>
+        /// <param name="LastStatusUpdate"></param>
+        /// <param name="PaidFee"></param>
+        /// <param name="CreatedByUser_ID"></param>
+        /// <returns>Returns true if the application was found, false otherwise.</returns>
         public static bool FindApplicationByID(int App_ID, ref int ApplicantPerson_ID, ref DateTime ApplicationDate,
                                         ref int ApplicationType_ID, ref short ApplicationStatus, ref DateTime LastStatusUpdate, ref decimal PaidFee, ref int CreatedByUser_ID)
         {
@@ -41,7 +52,17 @@ namespace DVLD_DataAccessLayer
             return notFound is false;
 
         }
-
+        /// <summary>
+        /// Adds a new application to the database.
+        /// </summary>
+        /// <param name="ApplicantPerson_ID"></param>
+        /// <param name="ApplicationDate"></param>
+        /// <param name="ApplicationType_ID"></param>
+        /// <param name="ApplicationStatus"></param>
+        /// <param name="LastStatusDate"></param>
+        /// <param name="PaidFees"></param>
+        /// <param name="CreatedByUser_ID"></param>
+        /// <returns>Returns the ApplicationID of the new Application, -1 if the application could not be added.</returns>
         public static int AddApplication(int ApplicantPerson_ID, DateTime ApplicationDate,
                                         int ApplicationType_ID, int ApplicationStatus, DateTime LastStatusDate, decimal PaidFees, int CreatedByUser_ID)
         {
@@ -53,8 +74,12 @@ namespace DVLD_DataAccessLayer
 
             return ApplicationID;
         }
-        
 
+        /// <summary>
+        /// Deletes the application with the given id.
+        /// </summary>
+        /// <param name="ApplicationID"></param>
+        /// <returns>True if the application is successfully deleted, false otherwise.</returns>
         public static bool DeleteApplication(int ApplicationID)
         {
             string query = "DELETE FROM Applications " +
@@ -65,6 +90,12 @@ namespace DVLD_DataAccessLayer
             return result;
         }
 
+        /// <summary>
+        /// Updates the status of the application with the given id.
+        /// </summary>
+        /// <param name="ApplicationID"></param>
+        /// <param name="NewStatus"></param>
+        /// <returns>True if the status of the app is sucessfully updated, fasle otherwise.</returns>
         public static bool UpdateStatus(int ApplicationID, ApplicationStatus NewStatus )
         {
             string query = "UPDATE Applications " +
@@ -76,6 +107,18 @@ namespace DVLD_DataAccessLayer
             return result;
         }
 
+        /// <summary>
+        /// Updates the application with the given id.
+        /// </summary>
+        /// <param name="ApplicationID"></param>
+        /// <param name="ApplicantPerson_ID"></param>
+        /// <param name="ApplicationDate"></param>
+        /// <param name="ApplicationType_ID"></param>
+        /// <param name="ApplicationStatus"></param>
+        /// <param name="LastStatusDate"></param>
+        /// <param name="PaidFees"></param>
+        /// <param name="CreatedByUser_ID"></param>
+        /// <returns>True if the app is sucessfully updated, fasle otherwise.</returns>
         public static bool UpdateApplication(int ApplicationID, int ApplicantPerson_ID, DateTime ApplicationDate,
                                         int ApplicationType_ID, int ApplicationStatus, DateTime LastStatusDate, decimal PaidFees, int CreatedByUser_ID)
         {
@@ -87,7 +130,10 @@ namespace DVLD_DataAccessLayer
 
                 return result ;
         }
-
+        /// <summary>
+        /// Fetches a table with all the applications in the database.
+        /// </summary>
+        /// <returns>A DataTable object with all application data.</returns>
         public static DataTable GetApplicationsTable()
         {
             string query = "SELECT * FROM Applications";
