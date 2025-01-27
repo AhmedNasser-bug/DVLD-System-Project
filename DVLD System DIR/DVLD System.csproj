@@ -1,0 +1,608 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F9C96359-4E0B-4D5E-9656-C8D8792796B1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DVLD_System</RootNamespace>
+    <AssemblyName>DVLD System</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\ctrlDisplayPersonDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlDisplayPersonDetails.Designer.cs">
+      <DependentUpon>ctrlDisplayPersonDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlDisplayUserData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlDisplayUserData.Designer.cs">
+      <DependentUpon>ctrlDisplayUserData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlDrivingLicenseApplicationDataData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlDrivingLicenseApplicationDataData.Designer.cs">
+      <DependentUpon>ctrlDrivingLicenseApplicationDataData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlFillUserData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlFillUserData.Designer.cs">
+      <DependentUpon>ctrlFillUserData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlFilterTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlFilterTable.Designer.cs">
+      <DependentUpon>ctrlFilterTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlFindLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlFindLicense.Designer.cs">
+      <DependentUpon>ctrlFindLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlFindPerson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlFindPerson.Designer.cs">
+      <DependentUpon>ctrlFindPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlGetPersonData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlGetPersonData.Designer.cs">
+      <DependentUpon>ctrlGetPersonData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlInternatiolDrivingLicenseDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlInternatiolDrivingLicenseDetails.Designer.cs">
+      <DependentUpon>ctrlInternatiolDrivingLicenseDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlShowApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlShowApplicationInfo.Designer.cs">
+      <DependentUpon>ctrlShowApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlShowLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlShowLicense.Designer.cs">
+      <DependentUpon>ctrlShowLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmDetainLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmDetainLicense.Designer.cs">
+      <DependentUpon>frmDetainLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmManageDetainedLicenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmManageDetainedLicenses.Designer.cs">
+      <DependentUpon>frmManageDetainedLicenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmReleaseLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmReleaseLicense.Designer.cs">
+      <DependentUpon>frmReleaseLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmRenewLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmRenewLicense.Designer.cs">
+      <DependentUpon>frmRenewLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmReplaceForDamagedOrLost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmReplaceForDamagedOrLost.Designer.cs">
+      <DependentUpon>frmReplaceForDamagedOrLost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\frmShowApplicationData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\frmShowApplicationData.Designer.cs">
+      <DependentUpon>frmShowApplicationData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\InternationalDrivingLicensesForms\frmAddInternationalDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\InternationalDrivingLicensesForms\frmAddInternationalDrivingLicense.Designer.cs">
+      <DependentUpon>frmAddInternationalDrivingLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\InternationalDrivingLicensesForms\frmInternationalLicenseDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\InternationalDrivingLicensesForms\frmInternationalLicenseDetails.Designer.cs">
+      <DependentUpon>frmInternationalLicenseDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\InternationalDrivingLicensesForms\frmManageInternationalLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\InternationalDrivingLicensesForms\frmManageInternationalLicense.Designer.cs">
+      <DependentUpon>frmManageInternationalLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmAddNewLocalDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmAddNewLocalDrivingLicense.Designer.cs">
+      <DependentUpon>frmAddNewLocalDrivingLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmAddTestAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmAddTestAppointment.Designer.cs">
+      <DependentUpon>frmAddTestAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmEditTestAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmEditTestAppointment.Designer.cs">
+      <DependentUpon>frmEditTestAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmIssueDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmIssueDrivingLicense.Designer.cs">
+      <DependentUpon>frmIssueDrivingLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmLocalDrivingLicenseApplicationsDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmLocalDrivingLicenseApplicationsDetails.Designer.cs">
+      <DependentUpon>frmLocalDrivingLicenseApplicationsDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmManageLocalDrivingLicensesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmManageLocalDrivingLicensesForm.Designer.cs">
+      <DependentUpon>frmManageLocalDrivingLicensesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmScheuleTests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmScheuleTests.Designer.cs">
+      <DependentUpon>frmScheuleTests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmTakeTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmTakeTest.Designer.cs">
+      <DependentUpon>frmTakeTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\ManageApplicationTypesForms\frmEditApplicationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\ManageApplicationTypesForms\frmEditApplicationType.Designer.cs">
+      <DependentUpon>frmEditApplicationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\ManageApplicationTypesForms\frmManageApplicationTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\ManageApplicationTypesForms\frmManageApplicationTypes.Designer.cs">
+      <DependentUpon>frmManageApplicationTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\ManageTestTypesForms\frmEditTestType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\ManageTestTypesForms\frmEditTestType.Designer.cs">
+      <DependentUpon>frmEditTestType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\ManageTestTypesForms\frmManageTestTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationsManagementForms\ManageTestTypesForms\frmManageTestTypes.Designer.cs">
+      <DependentUpon>frmManageTestTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageDriversForms\frmManageDrivers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageDriversForms\frmManageDrivers.Designer.cs">
+      <DependentUpon>frmManageDrivers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageDriversForms\frmShowLicenseDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageDriversForms\frmShowLicenseDetails.Designer.cs">
+      <DependentUpon>frmShowLicenseDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMenuForms\frmCurrentUserDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenuForms\frmCurrentUserDetails.Designer.cs">
+      <DependentUpon>frmCurrentUserDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageDriversForms\frmShowLicenseHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageDriversForms\frmShowLicenseHistory.Designer.cs">
+      <DependentUpon>frmShowLicenseHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManagePeopleForms\frmAddPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManagePeopleForms\frmAddPerson.Designer.cs">
+      <DependentUpon>frmAddPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManagePeopleForms\frmFindPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManagePeopleForms\frmFindPerson.Designer.cs">
+      <DependentUpon>frmFindPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManagePeopleForms\frmManagePeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManagePeopleForms\frmManagePeople.Designer.cs">
+      <DependentUpon>frmManagePeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManagePeopleForms\frmPersonDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManagePeopleForms\frmPersonDetails.Designer.cs">
+      <DependentUpon>frmPersonDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManagePeopleForms\frmUpdatePerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManagePeopleForms\frmUpdatePerson.Designer.cs">
+      <DependentUpon>frmUpdatePerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageUsersForms\frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageUsersForms\frmAddUser.Designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageUsersForms\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageUsersForms\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageUsersForms\frmDeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageUsersForms\frmDeleteUser.Designer.cs">
+      <DependentUpon>frmDeleteUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageUsersForms\frmDisplayUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageUsersForms\frmDisplayUser.Designer.cs">
+      <DependentUpon>frmDisplayUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageUsersForms\frmManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageUsersForms\frmManageUsers.Designer.cs">
+      <DependentUpon>frmManageUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageUsersForms\frmUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageUsersForms\frmUpdateUser.Designer.cs">
+      <DependentUpon>frmUpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMenuForms\frmMainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenuForms\frmMainScreen.Designer.cs">
+      <DependentUpon>frmMainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMenuForms\frmLoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenuForms\frmLoginScreen.Designer.cs">
+      <DependentUpon>frmLoginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnStart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\CryptograpgyUtils.cs" />
+    <Compile Include="Utils\dgvUtils.cs" />
+    <Compile Include="Utils\WinLogger.cs" />
+    <EmbeddedResource Include="Controls\ctrlDisplayPersonDetails.resx">
+      <DependentUpon>ctrlDisplayPersonDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlDisplayUserData.resx">
+      <DependentUpon>ctrlDisplayUserData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlDrivingLicenseApplicationDataData.resx">
+      <DependentUpon>ctrlDrivingLicenseApplicationDataData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlFillUserData.resx">
+      <DependentUpon>ctrlFillUserData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlFilterTable.resx">
+      <DependentUpon>ctrlFilterTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlFindLicense.resx">
+      <DependentUpon>ctrlFindLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlFindPerson.resx">
+      <DependentUpon>ctrlFindPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlGetPersonData.resx">
+      <DependentUpon>ctrlGetPersonData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlInternatiolDrivingLicenseDetails.resx">
+      <DependentUpon>ctrlInternatiolDrivingLicenseDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlShowApplicationInfo.resx">
+      <DependentUpon>ctrlShowApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlShowLicense.resx">
+      <DependentUpon>ctrlShowLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmDetainLicense.resx">
+      <DependentUpon>frmDetainLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmManageDetainedLicenses.resx">
+      <DependentUpon>frmManageDetainedLicenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmReleaseLicense.resx">
+      <DependentUpon>frmReleaseLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmRenewLicense.resx">
+      <DependentUpon>frmRenewLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\LicenseManagementForms\frmReplaceForDamagedOrLost.resx">
+      <DependentUpon>frmReplaceForDamagedOrLost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\frmShowApplicationData.resx">
+      <DependentUpon>frmShowApplicationData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\InternationalDrivingLicensesForms\frmAddInternationalDrivingLicense.resx">
+      <DependentUpon>frmAddInternationalDrivingLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\InternationalDrivingLicensesForms\frmInternationalLicenseDetails.resx">
+      <DependentUpon>frmInternationalLicenseDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\InternationalDrivingLicensesForms\frmManageInternationalLicense.resx">
+      <DependentUpon>frmManageInternationalLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmAddNewLocalDrivingLicense.resx">
+      <DependentUpon>frmAddNewLocalDrivingLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmAddTestAppointment.resx">
+      <DependentUpon>frmAddTestAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmEditTestAppointment.resx">
+      <DependentUpon>frmEditTestAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmIssueDrivingLicense.resx">
+      <DependentUpon>frmIssueDrivingLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmLocalDrivingLicenseApplicationsDetails.resx">
+      <DependentUpon>frmLocalDrivingLicenseApplicationsDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmManageLocalDrivingLicensesForm.resx">
+      <DependentUpon>frmManageLocalDrivingLicensesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmScheuleTests.resx">
+      <DependentUpon>frmScheuleTests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\LocalDrivingLicenseForms\frmTakeTest.resx">
+      <DependentUpon>frmTakeTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\ManageApplicationTypesForms\frmEditApplicationType.resx">
+      <DependentUpon>frmEditApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\ManageApplicationTypesForms\frmManageApplicationTypes.resx">
+      <DependentUpon>frmManageApplicationTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\ManageTestTypesForms\frmEditTestType.resx">
+      <DependentUpon>frmEditTestType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationsManagementForms\ManageTestTypesForms\frmManageTestTypes.resx">
+      <DependentUpon>frmManageTestTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageDriversForms\frmManageDrivers.resx">
+      <DependentUpon>frmManageDrivers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageDriversForms\frmShowLicenseDetails.resx">
+      <DependentUpon>frmShowLicenseDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainMenuForms\frmCurrentUserDetails.resx">
+      <DependentUpon>frmCurrentUserDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageDriversForms\frmShowLicenseHistory.resx">
+      <DependentUpon>frmShowLicenseHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManagePeopleForms\frmAddPerson.resx">
+      <DependentUpon>frmAddPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManagePeopleForms\frmFindPerson.resx">
+      <DependentUpon>frmFindPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManagePeopleForms\frmManagePeople.resx">
+      <DependentUpon>frmManagePeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManagePeopleForms\frmPersonDetails.resx">
+      <DependentUpon>frmPersonDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManagePeopleForms\frmUpdatePerson.resx">
+      <DependentUpon>frmUpdatePerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageUsersForms\frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageUsersForms\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageUsersForms\frmDeleteUser.resx">
+      <DependentUpon>frmDeleteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageUsersForms\frmDisplayUser.resx">
+      <DependentUpon>frmDisplayUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageUsersForms\frmManageUsers.resx">
+      <DependentUpon>frmManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageUsersForms\frmUpdateUser.resx">
+      <DependentUpon>frmUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainMenuForms\frmMainScreen.resx">
+      <DependentUpon>frmMainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainMenuForms\frmLoginScreen.resx">
+      <DependentUpon>frmLoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DefaultImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Manage People Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drivers Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usersIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AccountSettings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Applications Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel Button Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save Button Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddPerson Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Update Person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddUserIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowUsersDetailIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FindPersonICong.png" />
+    <None Include="Resources\Change Password Icon.png" />
+    <None Include="Resources\ShowUsersDetailIcon1.png" />
+    <None Include="Resources\DeleteUserIcon.png" />
+    <None Include="Resources\UpdateUserIcon.png" />
+    <None Include="Resources\FindPersonICong1.png" />
+    <None Include="Resources\Egypt.jpeg" />
+    <None Include="Resources\DeleteUserIcon1.png" />
+    <None Include="Resources\20230813_132917.jpg" />
+    <None Include="Resources\20230822_162902.jpg" />
+    <None Include="Resources\AddLocalLicense.png" />
+    <None Include="Resources\AddLDL.png" />
+    <None Include="Resources\AddAppointment.png" />
+    <None Include="Resources\check_mark.png" />
+    <Content Include="Resources\Deltarune OST_ 15 - Lantern.wav" />
+    <None Include="Resources\world_europe_africa.png" />
+    <None Include="Resources\world.png" />
+    <None Include="Resources\detainLicense.png" />
+    <None Include="Resources\DetainNewLicence.png" />
+    <None Include="Resources\ReleaseLicense.png" />
+    <None Include="Resources\RenewLicense.png" />
+    <None Include="Resources\ReplaceLicnese.png" />
+    <None Include="Resources\ReplaceLicense.png" />
+    <None Include="Resources\ScheduleTest.png" />
+    <None Include="Resources\EditTestAppointment.png" />
+    <None Include="Resources\IssueLicense.png" />
+    <None Include="Resources\LocalDrivingLicenseDetails.png" />
+    <None Include="Resources\ScheduleTests.png" />
+    <None Include="Resources\Passed.png" />
+    <None Include="Resources\Rejected.png" />
+    <None Include="Resources\TakeTest.png" />
+    <None Include="Resources\Eagle.png" />
+    <None Include="Resources\LicenseHistory.png" />
+    <Content Include="Utils\Logged User.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="People_Photos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DVLDBuisnessLayer DIR\DVLDBuisnessLayer.csproj">
+      <Project>{dc5d7b39-b484-4a74-b865-daac3307cb17}</Project>
+      <Name>DVLDBuisnessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

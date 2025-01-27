@@ -1,0 +1,27 @@
+D:\WEB\Abo-hadHoud.RoadMap\DVLDBuisnessLayer\bin\Debug\DVLDBuisnessLayer.dll
+D:\WEB\Abo-hadHoud.RoadMap\DVLDBuisnessLayer\bin\Debug\DVLDBuisnessLayer.pdb
+D:\WEB\Abo-hadHoud.RoadMap\DVLDBuisnessLayer\bin\Debug\DVLD DataAccessLayer.dll
+D:\WEB\Abo-hadHoud.RoadMap\DVLDBuisnessLayer\bin\Debug\DVLD DataAccessLayer.pdb
+D:\WEB\Abo-hadHoud.RoadMap\DVLDBuisnessLayer\obj\Debug\DVLDBuisnessLayer.csproj.AssemblyReference.cache
+D:\WEB\Abo-hadHoud.RoadMap\DVLDBuisnessLayer\obj\Debug\DVLDBuisnessLayer.csproj.CoreCompileInputs.cache
+D:\WEB\Abo-hadHoud.RoadMap\DVLDBuisnessLayer\obj\Debug\DVLDBuis.908794DB.Up2Date
+D:\WEB\Abo-hadHoud.RoadMap\DVLDBuisnessLayer\obj\Debug\DVLDBuisnessLayer.dll
+D:\WEB\Abo-hadHoud.RoadMap\DVLDBuisnessLayer\obj\Debug\DVLDBuisnessLayer.pdb
+D:\Study\Programming\Projects\DVLD Projet\DVLDBuisnessLayer\bin\Debug\DVLDBuisnessLayer.dll
+D:\Study\Programming\Projects\DVLD Projet\DVLDBuisnessLayer\bin\Debug\DVLDBuisnessLayer.pdb
+D:\Study\Programming\Projects\DVLD Projet\DVLDBuisnessLayer\bin\Debug\DVLD DataAccessLayer.dll
+D:\Study\Programming\Projects\DVLD Projet\DVLDBuisnessLayer\bin\Debug\DVLD DataAccessLayer.pdb
+D:\Study\Programming\Projects\DVLD Projet\DVLDBuisnessLayer\obj\Debug\DVLDBuisnessLayer.csproj.AssemblyReference.cache
+D:\Study\Programming\Projects\DVLD Projet\DVLDBuisnessLayer\obj\Debug\DVLDBuisnessLayer.csproj.CoreCompileInputs.cache
+D:\Study\Programming\Projects\DVLD Projet\DVLDBuisnessLayer\obj\Debug\DVLDBuis.908794DB.Up2Date
+D:\Study\Programming\Projects\DVLD Projet\DVLDBuisnessLayer\obj\Debug\DVLDBuisnessLayer.dll
+D:\Study\Programming\Projects\DVLD Projet\DVLDBuisnessLayer\obj\Debug\DVLDBuisnessLayer.pdb
+D:\Study\Programming\Projects\DVLD System Project\DVLDBuisnessLayer DIR\bin\Debug\DVLDBuisnessLayer.dll
+D:\Study\Programming\Projects\DVLD System Project\DVLDBuisnessLayer DIR\bin\Debug\DVLDBuisnessLayer.pdb
+D:\Study\Programming\Projects\DVLD System Project\DVLDBuisnessLayer DIR\bin\Debug\DVLD DataAccessLayer.dll
+D:\Study\Programming\Projects\DVLD System Project\DVLDBuisnessLayer DIR\bin\Debug\DVLD DataAccessLayer.pdb
+D:\Study\Programming\Projects\DVLD System Project\DVLDBuisnessLayer DIR\obj\Debug\DVLDBuisnessLayer.csproj.AssemblyReference.cache
+D:\Study\Programming\Projects\DVLD System Project\DVLDBuisnessLayer DIR\obj\Debug\DVLDBuisnessLayer.csproj.CoreCompileInputs.cache
+D:\Study\Programming\Projects\DVLD System Project\DVLDBuisnessLayer DIR\obj\Debug\DVLDBuis.908794DB.Up2Date
+D:\Study\Programming\Projects\DVLD System Project\DVLDBuisnessLayer DIR\obj\Debug\DVLDBuisnessLayer.dll
+D:\Study\Programming\Projects\DVLD System Project\DVLDBuisnessLayer DIR\obj\Debug\DVLDBuisnessLayer.pdb
