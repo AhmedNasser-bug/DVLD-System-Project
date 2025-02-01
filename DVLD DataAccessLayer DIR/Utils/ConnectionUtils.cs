@@ -17,6 +17,10 @@ namespace DVLD_DataAccessLayer
         public static string[] NullValues = {"-1", "", DateTime.MinValue.ToString()};
         private static WinLogger Logger = new WinLogger("SQL ERROR", "Application");
 
+        /// <summary>
+        /// Checks if the given value is identified as null from the globlal static string[] NullValues.
+        /// </summary>
+        /// <returns>True if the given value is null, Fasle otherwise.</returns>
         private static bool IsNull(string value)
         {
             foreach(string Null in NullValues)
@@ -26,6 +30,10 @@ namespace DVLD_DataAccessLayer
             return false;
         }
 
+        /// <summary>
+        /// Returns the names of the parameters in the given query.
+        /// </summary>
+        /// <returns></returns>
         private static List<string> _GetParamNames(string query)
         {
             List<string> paramNames = new List<string>();
@@ -51,7 +59,10 @@ namespace DVLD_DataAccessLayer
 
         }
 
-
+        /// <summary>
+        /// Initiates a connection with the database using the ConnectionString.
+        /// </summary>
+        /// <returns>The SqlConnection Initialized by the method.</returns>
         public static SqlConnection InitiateConnection()
         {
             try
@@ -67,7 +78,11 @@ namespace DVLD_DataAccessLayer
             }
             return null;
         }
-            
+
+        /// <summary>
+        /// Ensures the success of a non query command.
+        /// </summary>
+        /// <returns>The amount of rows affected of the given non-query command.</returns>
         public static int EnsureNonQuerySuccess(ref SqlCommand Command,ref SqlConnection connection)
         {
             int rowsAffected = 0;
@@ -87,6 +102,9 @@ namespace DVLD_DataAccessLayer
             return rowsAffected;
         }
 
+        /// <summary>
+        /// Executes a scalar command and returns the result as a string.
+        /// </summary>
         public static string ExecuteScalar(ref SqlCommand Command,ref SqlConnection connection)
         {
             string result = null;
@@ -105,6 +123,9 @@ namespace DVLD_DataAccessLayer
             return result;
         }
 
+        /// <summary>
+        /// Adds the given parameters to the given command as a query parameters.
+        /// </summary>
         public static void AddArgsToCommand(ref SqlCommand command, string query, params object[] paramaters)
         {
             List<string> queryParameters = _GetParamNames(query);
@@ -151,12 +172,6 @@ namespace DVLD_DataAccessLayer
             return rowItems;
         }
 
-        /// <summary>
-        /// Adds a row to table using the given query
-        /// </summary>
-        /// <param name="query">The query used to add the row</param>
-        /// <param name="parameters">The data of the added row</param>
-        /// <returns>The primary key of the added table</returns>
         public static int AddRowToTable(string query,params object[] parameters)
         {
             SqlConnection connection = InitiateConnection();
