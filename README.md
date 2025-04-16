@@ -1,3 +1,6 @@
+# Summary
+Fullstack Driver and Vehicle licensing solution, Implemented with Three-Tier archeticture using C#.NET, T-SQL, C# WinForms, equipped with a custom dynamic data access layer builder tool for better scalability. 
+
 ![Screenshot 2025-02-14 142337](https://github.com/user-attachments/assets/d8a73ed7-cda6-49c0-898f-af24fdb56b4e)
 
 # Functionality 
